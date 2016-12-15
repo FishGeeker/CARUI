@@ -20,15 +20,13 @@ public class PhoneNumber : MonoBehaviour
 	public Button buttonStern;
 	public Button buttonSharp;
 	public Button backButton;
+	public Button callButton;
+	public Text warningText;
 
 	// Use this for initialization
 	void Start()
 	{
-		if (callInputField.text==null)
-		{
-			callInputField.text = "";
-		}
-		IsPhoneNumber();
+		callInputField.text = "";
 
 		Button btn1 = button1.GetComponent<Button>();
 		btn1.onClick.AddListener(Button1OnClick);
@@ -68,12 +66,30 @@ public class PhoneNumber : MonoBehaviour
 
 		Button btnBack = backButton.GetComponent<Button>();
 		btnBack.onClick.AddListener(BackButtonOnClick);
+
+		Button btnCall = callButton.GetComponent<Button>();
+		btnCall.onClick.AddListener(CallButtonOnClick);
 	}
 	
 	// Update is called once per frame
 	void Update()
 	{
+		warningText.enabled=false;
 
+		if (IsPhoneNumber(callInputField.text)==false&&callInputField.text.Length>2)
+		{
+			//Debug.Log("This is phone number!");
+			warningText.enabled=true;
+		}
+		else if(WithSpecialNumber(callInputField.text))
+		{
+			warningText.enabled=true;
+		}
+		else
+		{
+			//Debug.Log("This is not phone number!");
+			warningText.enabled=false;
+		}
 	}
 
 	void Button1OnClick()
@@ -144,15 +160,28 @@ public class PhoneNumber : MonoBehaviour
 		}
 	}
 
-	void IsPhoneNumber()
+	void CallButtonOnClick()
 	{
-		string input = "Hello   World   ";
-		string pattern = "\\s+";
-		string replacement = " ";
-		Regex rgx = new Regex(pattern);
-		string result = rgx.Replace(input, replacement);
+		callInputField.text = callInputField.text + "#";
+	}
+
+	bool IsPhoneNumber(string input)
+	{
+		//string pattern = @"^\w+@\w+\.\w+$"; for email
+		string pattern = @"^(\d{3,4}\d{0,10})$";
+
+		bool isMatach=Regex.IsMatch(input,pattern);
+
+		return isMatach;
+	}
+
+	bool WithSpecialNumber(string input)
+	{
+		//string pattern = @"^\w+@\w+\.\w+$"; for email
+		string pattern = @"^((\*|\#)(\*|\#|[0-9])*)$";
 		
-		Debug.Log("Original String: "+input.ToString());
-		Debug.Log("Replacement String: "+result.ToString()); 
+		bool isMatach=Regex.IsMatch(input,pattern);
+		
+		return isMatach;
 	}
 }
