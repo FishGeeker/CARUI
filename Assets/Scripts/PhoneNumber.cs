@@ -21,6 +21,7 @@ public class PhoneNumber : MonoBehaviour
 	public Button buttonSharp;
 	public Button backButton;
 	public Button callButton;
+	public Button refreshButton;
 	public Text warningText;
 
 	// Use this for initialization
@@ -66,6 +67,9 @@ public class PhoneNumber : MonoBehaviour
 
 		Button btnBack = backButton.GetComponent<Button>();
 		btnBack.onClick.AddListener(BackButtonOnClick);
+
+		Button btnRefresh = refreshButton.GetComponent<Button>();
+		btnRefresh.onClick.AddListener(RefreshButtonOnClick);
 
 		Button btnCall = callButton.GetComponent<Button>();
 		btnCall.onClick.AddListener(CallButtonOnClick);
@@ -160,6 +164,11 @@ public class PhoneNumber : MonoBehaviour
 		}
 	}
 
+	void RefreshButtonOnClick()
+	{
+		callInputField.text ="";
+	}
+
 	void CallButtonOnClick()
 	{
 		callInputField.text = callInputField.text + "#";
@@ -177,8 +186,7 @@ public class PhoneNumber : MonoBehaviour
 
 	bool WithSpecialNumber(string input)
 	{
-		//string pattern = @"^\w+@\w+\.\w+$"; for email
-		string pattern = @"^((\*|\#)(\*|\#|[0-9])*)$";
+		string pattern = @"^(((\*|\#)(\*|\#|[0-9])*)|([0-9](\*|\#)))$";
 		
 		bool isMatach=Regex.IsMatch(input,pattern);
 		
