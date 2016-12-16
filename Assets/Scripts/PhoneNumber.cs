@@ -23,6 +23,11 @@ public class PhoneNumber : MonoBehaviour
 	public Button callButton;
 	public Button refreshButton;
 	public Text warningText;
+	public AudioClip ringingSound;
+	public AudioClip messageSound;
+
+	private AudioSource audioSource;
+	private bool callButtonOn;
 
 	// Use this for initialization
 	void Start()
@@ -78,21 +83,19 @@ public class PhoneNumber : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		warningText.enabled=false;
+		warningText.enabled = false;
 
-		if (IsPhoneNumber(callInputField.text)==false&&callInputField.text.Length>2)
+		if (IsPhoneNumber(callInputField.text) == false && callInputField.text.Length > 2)
 		{
 			//Debug.Log("This is phone number!");
-			warningText.enabled=true;
-		}
-		else if(WithSpecialNumber(callInputField.text))
+			warningText.enabled = true;
+		} else if (WithSpecialNumber(callInputField.text))
 		{
-			warningText.enabled=true;
-		}
-		else
+			warningText.enabled = true;
+		}  else
 		{
 			//Debug.Log("This is not phone number!");
-			warningText.enabled=false;
+			warningText.enabled = false;
 		}
 	}
 
@@ -158,20 +161,27 @@ public class PhoneNumber : MonoBehaviour
 
 	void BackButtonOnClick()
 	{
-		if (callInputField.text.Length>0)
+		if (callInputField.text.Length > 0)
 		{
-			callInputField.text = callInputField.text.Remove(callInputField.text.Length-1);
+			callInputField.text = callInputField.text.Remove(callInputField.text.Length - 1);
 		}
 	}
 
 	void RefreshButtonOnClick()
 	{
-		callInputField.text ="";
+		callInputField.text = "";
 	}
 
 	void CallButtonOnClick()
 	{
-		callInputField.text = callInputField.text + "#";
+		if (!warningText.enabled&&callInputField.text.Length>2)
+		{
+			StartCoroutine(SoundOn());
+		}
+		else
+		{
+			StartCoroutine(WaitMoment());
+		}
 	}
 
 	bool IsPhoneNumber(string input)
@@ -179,7 +189,7 @@ public class PhoneNumber : MonoBehaviour
 		//string pattern = @"^\w+@\w+\.\w+$"; for email
 		string pattern = @"^(\d{3,4}\d{0,10})$";
 
-		bool isMatach=Regex.IsMatch(input,pattern);
+		bool isMatach = Regex.IsMatch(input, pattern);
 
 		return isMatach;
 	}
@@ -188,8 +198,27 @@ public class PhoneNumber : MonoBehaviour
 	{
 		string pattern = @"^(((\*|\#)(\*|\#|[0-9])*)|([0-9](\*|\#)))$";
 		
-		bool isMatach=Regex.IsMatch(input,pattern);
-		
+		bool isMatach = Regex.IsMatch(input, pattern);
+
 		return isMatach;
 	}
+
+	IEnumerator SoundOn()
+	{
+		audioSource = callButton.GetComponent<AudioSource>();
+		audioSource.clip = ringingSound;
+		audioSource.Play();
+		yield return new WaitForSeconds(4);
+		audioSource.Play();
+		yield return new WaitForSeconds(4);
+		audioSource.clip = messageSound;
+		audioSource.Play();
+	}
+
+	IEnumerator WaitMoment()
+	{
+		warningText.enabled=true;
+		yield return new WaitForSeconds(4);
+	}
+
 }
