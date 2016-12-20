@@ -46,16 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Crazy Wheel\Scripts\ActivateOnEnable.cs" />
-     <Compile Include="Assets\Crazy Wheel\Scripts\AdManager.cs" />
-     <Compile Include="Assets\Crazy Wheel\Scripts\CircleBlock.cs" />
-     <Compile Include="Assets\Crazy Wheel\Scripts\Controller.cs" />
-     <Compile Include="Assets\Crazy Wheel\Scripts\Dial.cs" />
-     <Compile Include="Assets\Crazy Wheel\Scripts\LeaderboardManager.cs" />
-     <Compile Include="Assets\Crazy Wheel\Scripts\ShakeCamera.cs" />
-     <Compile Include="Assets\Crazy Wheel\Scripts\UI\EasyTween.cs" />
-     <Compile Include="Assets\Crazy Wheel\Scripts\UI\ReferencedFrom.cs" />
-     <Compile Include="Assets\Crazy Wheel\Scripts\UI\UITween.cs" />
+     <Compile Include="Assets\Scripts\OnCallNumber.cs" />
      <Compile Include="Assets\Scripts\PhoneNumber.cs" />
      <Compile Include="Assets\Scripts\QuitOnClick.cs" />
      <Compile Include="Assets\Scripts\UIDataManager.cs" />

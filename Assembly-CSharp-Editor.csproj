@@ -46,8 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Crazy Wheel\Editor\Menu.cs" />
-     <Compile Include="Assets\Crazy Wheel\Scripts\UI\Editor\EditorUITween.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\Editor\AlphaNumericSort.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\Editor\GUIHierarchy.cs" />
      <None Include="Assets\Unity UI Samples\Fonts\Jupiter\LICENSE.txt" />
