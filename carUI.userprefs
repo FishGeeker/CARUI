@@ -1,14 +1,20 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PhoneNumber.cs">
     <Files>
-      <File FileName="Assets\Scripts\PhoneNumber.cs" Line="33" Column="14" />
+      <File FileName="Assets\Scripts\PhoneNumber.cs" Line="213" Column="23" />
       <File FileName="Assets\Scripts\UIDataManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\QuitOnClick.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True" />
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Scripts" expanded="True">
+              <Node name="PhoneNumber.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
       </Pad>
       <Pad Id="ClassPad">
         <State expanded="True" selected="True" />

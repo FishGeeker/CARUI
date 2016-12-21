@@ -21,6 +21,7 @@ public class PhoneNumber : MonoBehaviour
 	public Button buttonSharp;
 	public Button backButton;
 	public Button callButton;
+	public Button cancelButton;
 	public Button refreshButton;
 	public Text warningText;
 	public AudioClip ringingSound;
@@ -205,14 +206,23 @@ public class PhoneNumber : MonoBehaviour
 
 	IEnumerator SoundOn()
 	{
-		audioSource = callButton.GetComponent<AudioSource>();
+		audioSource = cancelButton.GetComponent<AudioSource>();
 		audioSource.clip = ringingSound;
-		audioSource.Play();
+		if (audioSource.enabled)
+		{
+			audioSource.Play();
+		}
 		yield return new WaitForSeconds(4);
-		audioSource.Play();
+		if (audioSource.enabled)
+		{
+			audioSource.Play();
+		}
 		yield return new WaitForSeconds(4);
 		audioSource.clip = messageSound;
-		audioSource.Play();
+		if (audioSource.enabled)
+		{
+			audioSource.Play();
+		}
 	}
 
 	IEnumerator WaitMoment()
