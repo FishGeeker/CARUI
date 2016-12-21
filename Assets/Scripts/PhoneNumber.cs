@@ -97,6 +97,7 @@ public class PhoneNumber : MonoBehaviour
 			//Debug.Log("This is not phone number!");
 			warningText.enabled = false;
 		}
+		//getPhoneNumber();
 	}
 
 	void Button1OnClick()
@@ -205,7 +206,7 @@ public class PhoneNumber : MonoBehaviour
 
 	IEnumerator SoundOn()
 	{
-		audioSource = callButton.GetComponent<AudioSource>();
+		audioSource = callInputField.GetComponent<AudioSource>();
 		audioSource.clip = ringingSound;
 		audioSource.Play();
 		yield return new WaitForSeconds(4);
@@ -221,4 +222,9 @@ public class PhoneNumber : MonoBehaviour
 		yield return new WaitForSeconds(4);
 	}
 
+	void getPhoneNumber()
+	{
+		Debug.Log(callInputField.text);
+		//return callInputField.text;
+	}
 }
