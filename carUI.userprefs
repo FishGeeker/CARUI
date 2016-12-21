@@ -1,8 +1,16 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PhoneNumber.cs">
     <Files>
       <File FileName="Assets\Scripts\PhoneNumber.cs" Line="213" Column="23" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\OnCallNumber.cs">
+    <Files>
+      <File FileName="Assets\Scripts\OnCallNumber.cs" Line="26" Column="3" />
+      <File FileName="Assets\Scripts\PhoneNumber.cs" Line="197" Column="2" />
+>>>>>>> 48075480d085eaa39c1b1fd7d1943491f9f8af22
       <File FileName="Assets\Scripts\UIDataManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\QuitOnClick.cs" Line="1" Column="1" />
     </Files>
@@ -11,7 +19,11 @@
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Scripts" expanded="True">
+<<<<<<< HEAD
               <Node name="PhoneNumber.cs" selected="True" />
+=======
+              <Node name="OnCallNumber.cs" selected="True" />
+>>>>>>> 48075480d085eaa39c1b1fd7d1943491f9f8af22
             </Node>
           </Node>
         </State>
