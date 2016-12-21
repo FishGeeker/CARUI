@@ -207,11 +207,8 @@ public class PhoneNumber : MonoBehaviour
 
 	IEnumerator SoundOn()
 	{
-<<<<<<< HEAD
 		audioSource = cancelButton.GetComponent<AudioSource>();
-=======
-		audioSource = callInputField.GetComponent<AudioSource>();
->>>>>>> 48075480d085eaa39c1b1fd7d1943491f9f8af22
+
 		audioSource.clip = ringingSound;
 		if (audioSource.enabled)
 		{
