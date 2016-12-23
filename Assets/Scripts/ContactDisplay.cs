@@ -14,6 +14,11 @@ public class ContactDisplay : MonoBehaviour
 
 	public void Display()
 	{
+		foreach (Transform child in transform)
+		{
+			Destroy(child.gameObject);
+		}
+
 		foreach (Contact contact in CallUserDataManager.ins.contactDB.list)
 		{
 			ContactBlock newBlock = Instantiate(blockPrefab) as ContactBlock;

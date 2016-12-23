@@ -13,5 +13,13 @@
       <name>Manuell Neuer</name>
       <number>66666666666</number>
     </Contact>
+    <Contact>
+      <name>Mario Goetze</name>
+      <number>00000000000</number>
+    </Contact>
+    <Contact>
+      <name>Christian Ronaldo</name>
+      <number>1</number>
+    </Contact>
   </list>
 </ContactDatabase>

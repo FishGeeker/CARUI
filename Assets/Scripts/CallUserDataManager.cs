@@ -31,11 +31,24 @@ public class CallUserDataManager : MonoBehaviour
 		stream.Close();
 	}
 
+	public void AddContacts()
+	{
+		//XmlSerializer ser = new XmlSerializer(typeof(ContactDatabase));
+		FileStream stream = new FileStream(Application.dataPath+"/StreamingFiles/callContact_data.xml",FileMode.Append);
+
+		StreamWriter sw=new StreamWriter(stream);
+		sw.WriteLine("David Bull");
+		sw.WriteLine("15056022916");
+
+		sw.Close();
+		stream.Close();
+	}
+
 	public void LoadContacts()
 	{
 		XmlSerializer ser=new XmlSerializer(typeof(ContactDatabase));
 		FileStream stream=new FileStream(Application.dataPath+"/StreamingFiles/callContact_data.xml",FileMode.Open);
-		contactDB=(ContactDatabase)ser.Deserialize(stream);
+		contactDB=ser.Deserialize(stream) as ContactDatabase;
 		stream.Close();
 	}
 }
