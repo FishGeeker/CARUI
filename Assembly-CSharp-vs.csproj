@@ -46,6 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CallUserDataManager.cs" />
+     <Compile Include="Assets\Scripts\ContactBlock.cs" />
+     <Compile Include="Assets\Scripts\ContactDisplay.cs" />
      <Compile Include="Assets\Scripts\OnCallNumber.cs" />
      <Compile Include="Assets\Scripts\PhoneNumber.cs" />
      <Compile Include="Assets\Scripts\QuitOnClick.cs" />
@@ -64,6 +67,7 @@
      <None Include="Assets\Unity UI Samples\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\Unity UI Samples\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
+     <None Include="Assets\StreamingFiles\callContact_data.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity 5.0.0b18/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

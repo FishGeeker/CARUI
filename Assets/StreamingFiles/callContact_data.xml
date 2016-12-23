@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ContactDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <list>
+    <Contact>
+      <name>Hui Zhang</name>
+      <number>015773054025</number>
+    </Contact>
+    <Contact>
+      <name>Alexander Müller</name>
+      <number>0049015773054025</number>
+    </Contact>
+    <Contact>
+      <name>Manuell Neuer</name>
+      <number>66666666666</number>
+    </Contact>
+  </list>
+</ContactDatabase>
