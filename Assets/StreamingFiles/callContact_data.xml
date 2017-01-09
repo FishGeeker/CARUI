@@ -21,5 +21,17 @@
       <name>Christian Ronaldo</name>
       <number>1</number>
     </Contact>
+    <Contact>
+      <name>Orange</name>
+      <number>1234567</number>
+    </Contact>
+    <Contact>
+      <name>Apple</name>
+      <number>123</number>
+    </Contact>
+    <Contact>
+      <name>Apple2</name>
+      <number>12345</number>
+    </Contact>
   </list>
 </ContactDatabase>
