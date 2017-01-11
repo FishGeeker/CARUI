@@ -20,7 +20,8 @@ public class PhoneNumber : MonoBehaviour
 	public Button buttonStern;
 	public Button buttonSharp;
 	public Button backButton;
-	public Button callButton;
+	public Button callButton;	//callButton in KeyboardPanel
+	public Button callButton1;	//callButton in InCallPanel
 	public Button cancelButton;
 	public Button refreshButton;
 	public Text warningText;
@@ -79,6 +80,13 @@ public class PhoneNumber : MonoBehaviour
 
 		Button btnCall = callButton.GetComponent<Button>();
 		btnCall.onClick.AddListener(CallButtonOnClick);
+
+
+		//btnCancel.onClick.AddListener(CallButtonOnClick);
+
+		//cancelButton=GameObject.Find("cancelButton").GetComponent;
+		//Button btnCall1 = callButton1.GetComponent<Button>();
+		//btnCall1.onClick.AddListener(newCallButtonOnClick);
 	}
 	
 	// Update is called once per frame
@@ -186,6 +194,11 @@ public class PhoneNumber : MonoBehaviour
 		}
 	}
 
+//	public void newCallButtonOnClick()
+//	{
+//		StartCoroutine(SoundOn());
+//	}
+
 	bool IsPhoneNumber(string input)
 	{
 		//string pattern = @"^\w+@\w+\.\w+$"; for email
@@ -208,20 +221,22 @@ public class PhoneNumber : MonoBehaviour
 	IEnumerator SoundOn()
 	{
 		audioSource = cancelButton.GetComponent<AudioSource>();
-
 		audioSource.clip = ringingSound;
-		if (audioSource.enabled)
+
+		if (cancelButton.enabled)
 		{
 			audioSource.Play();
 		}
 		yield return new WaitForSeconds(4);
-		if (audioSource.enabled)
+
+		if (cancelButton.enabled)
 		{
 			audioSource.Play();
 		}
 		yield return new WaitForSeconds(4);
 		audioSource.clip = messageSound;
-		if (audioSource.enabled)
+
+		if (cancelButton.enabled)
 		{
 			audioSource.Play();
 		}
