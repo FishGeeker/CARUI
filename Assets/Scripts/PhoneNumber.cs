@@ -30,7 +30,7 @@ public class PhoneNumber : MonoBehaviour
 
 	private AudioSource audioSource;
 	private bool callButtonOn;
-
+	VirtualKeyboard vk= new VirtualKeyboard();
 	// Use this for initialization
 	void Start()
 	{
@@ -107,6 +107,20 @@ public class PhoneNumber : MonoBehaviour
 			warningText.enabled = false;
 		}
 		//getPhoneNumber();
+	}
+
+	public void OpenKeyboard()
+	{
+		{       
+			vk.ShowTouchKeyboard();
+		}
+	}
+	
+	public void CloseKeyboard()
+	{
+		{       
+			vk.HideTouchKeyboard();
+		}
 	}
 
 	void Button1OnClick()

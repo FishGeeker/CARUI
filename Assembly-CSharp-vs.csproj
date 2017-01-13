@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\PhoneNumber.cs" />
      <Compile Include="Assets\Scripts\QuitOnClick.cs" />
      <Compile Include="Assets\Scripts\UIDataManager.cs" />
+     <Compile Include="Assets\Scripts\VirtualKeyboard.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
