@@ -8,7 +8,7 @@ public class ContactDisplay : MonoBehaviour
 {
 
 	public ContactBlock blockPrefab;
-	public GameObject callPanel;
+	public GameObject callPanel,keyBoardPanel;
 	public Text callName, callNumber;
 
 	void Start()
@@ -38,5 +38,6 @@ public class ContactDisplay : MonoBehaviour
 		callName.text=contact.ContactName.text;
 		callNumber.text=contact.ContactNumber.text;
 		callPanel.SetActive(true);
+		keyBoardPanel.SetActive(false);
 	}
 }
