@@ -9,8 +9,8 @@ public class ContactBlock : MonoBehaviour
 
 	public void Display(Contact contact)
 	{
-		ContactName.text=contact.name;
-		ContactNumber.text=contact.number;
+		ContactName.text = contact.name;
+		ContactNumber.text = contact.number;
 	}
 
 }

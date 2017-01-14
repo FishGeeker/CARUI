@@ -33,5 +33,9 @@
       <name>Apple2</name>
       <number>12345</number>
     </Contact>
+    <Contact>
+      <name>David Jobs</name>
+      <number>9999999</number>
+    </Contact>
   </list>
 </ContactDatabase>

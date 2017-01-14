@@ -8,7 +8,7 @@ public class ContactDisplay : MonoBehaviour
 {
 
 	public ContactBlock blockPrefab;
-	public GameObject callPanel,keyBoardPanel;
+	public GameObject callPanel, keyBoardPanel;
 	public Text callName, callNumber;
 
 	void Start()
@@ -28,15 +28,18 @@ public class ContactDisplay : MonoBehaviour
 			ContactBlock newBlock = Instantiate(blockPrefab) as ContactBlock;
 			newBlock.transform.SetParent(transform, false);
 			newBlock.Display(contact);
-			newBlock.GetComponent<Button>().onClick.AddListener(delegate{ContactButtonOnClick(newBlock);});
+			newBlock.GetComponent<Button>().onClick.AddListener(delegate {
+				ContactButtonOnClick(newBlock);
+			});
 			//or use--> newBlock.GetComponent<Button>().onClick.AddListener(() => ContactButtonOnClick(newBlock));
 		}
 	}
 
-	public void ContactButtonOnClick(ContactBlock contact){
+	public void ContactButtonOnClick(ContactBlock contact)
+	{
 		Debug.Log(contact.name);
-		callName.text=contact.ContactName.text;
-		callNumber.text=contact.ContactNumber.text;
+		callName.text = contact.ContactName.text;
+		callNumber.text = contact.ContactNumber.text;
 		callPanel.SetActive(true);
 		keyBoardPanel.SetActive(false);
 	}

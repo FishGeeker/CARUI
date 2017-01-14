@@ -17,6 +17,7 @@ public class CallUserDataManager : MonoBehaviour
 
 	public ContactDatabase contactDB;
 
+	public InputField nameInput, numberInput;
 
 //	public void SaveContacts()
 //	{
@@ -38,26 +39,27 @@ public class CallUserDataManager : MonoBehaviour
 
 			if (Node != null)
 			{
-				bool contactExist=false;
+				bool contactExist = false;
 				foreach (XmlNode xNode in Node)
 				{
 					XmlNode parent = xNode.FirstChild;
-					if (parent.InnerText == "Apple2")
+					if (parent.InnerText == nameInput.text)
 					{
 						Debug.Log("User exists");
-						contactExist=true;
+						contactExist = true;
 					} 	
 				}
 
-				if (!contactExist) {
+				if (!contactExist)
+				{
 					XmlElement contactNode = XDoc.CreateElement("Contact");
 					Node.AppendChild(contactNode);
 					
 					XmlElement nameNode = XDoc.CreateElement("name");
 					XmlElement numberNode = XDoc.CreateElement("number");
 					
-					nameNode.InnerText = "Apple2";
-					numberNode.InnerText = "12345";
+					nameNode.InnerText = nameInput.text;
+					numberNode.InnerText = numberInput.text;
 					contactNode.AppendChild(nameNode);
 					contactNode.AppendChild(numberNode);
 				}

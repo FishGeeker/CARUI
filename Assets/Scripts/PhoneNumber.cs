@@ -30,7 +30,7 @@ public class PhoneNumber : MonoBehaviour
 
 	private AudioSource audioSource;
 	private bool callButtonOn;
-	VirtualKeyboard vk= new VirtualKeyboard();
+	VirtualKeyboard vk = new VirtualKeyboard();
 	// Use this for initialization
 	void Start()
 	{
@@ -101,7 +101,7 @@ public class PhoneNumber : MonoBehaviour
 		} else if (WithSpecialNumber(callInputField.text))
 		{
 			warningText.enabled = true;
-		}  else
+		} else
 		{
 			//Debug.Log("This is not phone number!");
 			warningText.enabled = false;
@@ -112,7 +112,8 @@ public class PhoneNumber : MonoBehaviour
 	public void OpenKeyboard()
 	{
 		{       
-			vk.ShowTouchKeyboard();
+			//vk.ShowTouchKeyboard();
+			vk.ShowOnScreenKeyboard();
 		}
 	}
 	
@@ -198,11 +199,10 @@ public class PhoneNumber : MonoBehaviour
 
 	void CallButtonOnClick()
 	{
-		if (!warningText.enabled&&callInputField.text.Length>2)
+		if (!warningText.enabled && callInputField.text.Length > 2)
 		{
 			StartCoroutine(SoundOn());
-		}
-		else
+		} else
 		{
 			StartCoroutine(WaitMoment());
 		}
@@ -258,7 +258,7 @@ public class PhoneNumber : MonoBehaviour
 
 	IEnumerator WaitMoment()
 	{
-		warningText.enabled=true;
+		warningText.enabled = true;
 		yield return new WaitForSeconds(4);
 	}
 
