@@ -112,15 +112,16 @@ public class PhoneNumber : MonoBehaviour
 	public void OpenKeyboard()
 	{
 		{       
-			//vk.ShowTouchKeyboard();
-			vk.ShowOnScreenKeyboard();
+			vk.ShowTouchKeyboard();
+			//vk.ShowOnScreenKeyboard();
 		}
 	}
 	
 	public void CloseKeyboard()
 	{
-		{       
+		{   
 			vk.HideTouchKeyboard();
+			//vk.HideOnScreenKeyboard();
 		}
 	}
 

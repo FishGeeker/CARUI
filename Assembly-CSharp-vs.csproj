@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{800B8EED-D4F7-16BB-6B0E-FFC204BAB5C9}</ProjectGuid>
+	<ProjectGuid>{AD20107D-44E7-4120-535D-66573662AC11}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\OnCallNumber.cs" />
      <Compile Include="Assets\Scripts\PhoneNumber.cs" />
      <Compile Include="Assets\Scripts\QuitOnClick.cs" />
+     <Compile Include="Assets\Scripts\SendingEmail.cs" />
      <Compile Include="Assets\Scripts\UIDataManager.cs" />
      <Compile Include="Assets\Scripts\VirtualKeyboard.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
@@ -65,6 +66,7 @@
      <Compile Include="Assets\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\TiltWindow.cs" />
+     <None Include="Assets\StreamingFiles\Mails_data.xml" />
      <None Include="Assets\Unity UI Samples\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\Unity UI Samples\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />

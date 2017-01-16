@@ -42,8 +42,9 @@ public class CallUserDataManager : MonoBehaviour
 				bool contactExist = false;
 				foreach (XmlNode xNode in Node)
 				{
-					XmlNode parent = xNode.FirstChild;
-					if (parent.InnerText == nameInput.text)
+					XmlNode nameParent = xNode.FirstChild;
+					XmlNode numberParent = xNode.LastChild;
+					if (nameParent.InnerText == nameInput.text&&numberParent.InnerText==numberInput.text)
 					{
 						Debug.Log("User exists");
 						contactExist = true;

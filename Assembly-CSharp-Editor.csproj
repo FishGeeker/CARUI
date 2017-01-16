@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{0EA24480-6BE1-4B1C-DA7C-036AA17597D8}</ProjectGuid>
+	<ProjectGuid>{783689AD-00F2-FF0F-BCF5-5EB7AE324F33}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Unity UI Samples\Scripts\Editor\AlphaNumericSort.cs" />
      <Compile Include="Assets\Unity UI Samples\Scripts\Editor\GUIHierarchy.cs" />
+     <None Include="Assets\StreamingFiles\Mails_data.xml" />
      <None Include="Assets\Unity UI Samples\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\Unity UI Samples\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
@@ -88,7 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{800B8EED-D4F7-16BB-6B0E-FFC204BAB5C9}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{AD20107D-44E7-4120-535D-66573662AC11}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

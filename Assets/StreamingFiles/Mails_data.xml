@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<MailsDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <list>
+    <Mail>
+      <adress>florianzhang@126.com</adress>
+      <subject>TestMail</subject>
+      <body>Hello World!
+Das ist wunderschön!</body>
+    </Mail>
+    <Mail>
+      <adress>nihao@123.com</adress>
+      <subject>newTest</subject>
+      <body>Hi with testing!</body>
+    </Mail>
+  </list>
+</MailsDatabase>
