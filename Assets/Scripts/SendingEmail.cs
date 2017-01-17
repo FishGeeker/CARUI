@@ -75,6 +75,15 @@ public class SendingEmail : MonoBehaviour
 			Debug.Log("send succeed!");
 		}
 	}
+
+	public void LoadMails()
+	{
+		XmlSerializer ser = new XmlSerializer(typeof(MailsDatabase));
+		FileStream stream = new FileStream(Application.dataPath + "/StreamingFiles/Mails_data.xml", FileMode.Open);
+		mailsDB = ser.Deserialize(stream) as MailsDatabase;
+		
+		stream.Close();
+	}
 }
 
 [System.Serializable]

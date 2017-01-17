@@ -12,5 +12,15 @@ Das ist wunderschön!</body>
       <subject>newTest</subject>
       <body>Hi with testing!</body>
     </Mail>
+    <Mail>
+      <adress>florianzhang@126.com</adress>
+      <subject>test</subject>
+      <body>Guten Morgen!</body>
+    </Mail>
+    <Mail>
+      <adress>hui.h.zhang@tum.de</adress>
+      <subject>Test_17.01.2017</subject>
+      <body>hihihihiihihihihih</body>
+    </Mail>
   </list>
 </MailsDatabase>

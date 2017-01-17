@@ -27,7 +27,7 @@ public class ContactDisplay : MonoBehaviour
 		{
 			ContactBlock newBlock = Instantiate(blockPrefab) as ContactBlock;
 			newBlock.transform.SetParent(transform, false);
-			newBlock.Display(contact);
+			newBlock.Display(contact);    // Method from ContactBlock
 			newBlock.GetComponent<Button>().onClick.AddListener(delegate {
 				ContactButtonOnClick(newBlock);
 			});
