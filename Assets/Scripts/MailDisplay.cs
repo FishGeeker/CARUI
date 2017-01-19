@@ -9,7 +9,8 @@ public class MailDisplay : MonoBehaviour
 	
 	public MailBlock mailBlockPrefab;
 	//public GameObject callPanel, keyBoardPanel;
-	public Text mailAdress, mailSubject, mailBody;
+	public Text mailAdress, mailSubject, mailBody, mailTime;
+	public GameObject mailContentPanel;
 	
 	void Start()
 	{
@@ -24,14 +25,14 @@ public class MailDisplay : MonoBehaviour
 			Destroy(child.gameObject);
 		}
 
-		foreach (Mail mail in SendingEmail.insMail.mailsDB.list)
+		foreach (Mail mail in SendingEmail.insMail.mailsDB.list.OrderByDescending(e => e.time).ToList())
 		{
 			MailBlock newBlock = Instantiate(mailBlockPrefab) as MailBlock;
 			newBlock.transform.SetParent(transform, false);
 			newBlock.Display(mail);
-//			newBlock.GetComponent<Button>().onClick.AddListener(delegate {
-//				ContactButtonOnClick(newBlock);
-//			});
+			newBlock.GetComponent<Button>().onClick.AddListener(delegate {
+				MailButtonOnClick(newBlock);	//with newBlock other than mail, otherwise causes the same output
+			});
 			//or use--> newBlock.GetComponent<Button>().onClick.AddListener(() => ContactButtonOnClick(newBlock));
 		}
 	}
@@ -39,9 +40,12 @@ public class MailDisplay : MonoBehaviour
 	public void MailButtonOnClick(MailBlock mail)
 	{
 		//Debug.Log(mail.name);
-		mailAdress.text = mail.MailAddress.text;
 		mailSubject.text = mail.MailSubject.text;
-		//callPanel.SetActive(true);
+		mailAdress.text = mail.MailAddress.text;
+		mailTime.text = mail.MailFullTime.text;
+		mailBody.text = mail.MailBody.text;
+
+		mailContentPanel.SetActive(true);
 		//keyBoardPanel.SetActive(false);
 	}
 }
