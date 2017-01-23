@@ -44,5 +44,41 @@ Das ist wunderschön!</body>
       <body>programm</body>
       <time>01/19/2017 17:52:57</time>
     </Mail>
+    <Mail>
+      <adress>speed@tum.de</adress>
+      <subject>Mailtest 23.01.2017</subject>
+      <body>Es ist ein testMail von 23.01.2017.</body>
+      <time>01/23/2017 14:07:31</time>
+    </Mail>
+    <Mail>
+      <adress>panda@tum.de</adress>
+      <subject>Initialize MailPanel</subject>
+      <body>During each Start we initialize the Input field for address, subject and body</body>
+      <time>01/23/2017 14:19:01</time>
+    </Mail>
+    <Mail>
+      <adress>newStudents@tum.de</adress>
+      <subject>test</subject>
+      <body>this is test mail</body>
+      <time>01/23/2017 14:22:17</time>
+    </Mail>
+    <Mail>
+      <adress>Address@tum.de</adress>
+      <subject>laaaaaaaalallalalal</subject>
+      <body>ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</body>
+      <time>01/23/2017 15:28:02</time>
+    </Mail>
+    <Mail>
+      <adress>davied@tum.de</adress>
+      <subject>dddddddddddddddddddd</subject>
+      <body>fffffffffffffff</body>
+      <time>01/23/2017 16:36:13</time>
+    </Mail>
+    <Mail>
+      <adress>littleMouse@tum.de</adress>
+      <subject>test</subject>
+      <body>tttttttttttttttttttttttttttttttttttttttttsssssssssssssssssssssssssssssssssssssssssssssssssssssssssttttttttttttttttttttttttttttttttttttlllllllllllllllllllllllllllllllllllllllll</body>
+      <time>01/23/2017 17:53:17</time>
+    </Mail>
   </list>
 </MailsDatabase>

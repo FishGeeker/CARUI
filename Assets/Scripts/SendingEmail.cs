@@ -22,11 +22,18 @@ public class SendingEmail : MonoBehaviour
 	public MailsDatabase mailsDB;
 	public InputField mailAdress, mailSubject, mailBody;
 
+	public void AfterSendingInitialize()
+	{
+		mailAdress.text="";
+		mailSubject.text="";
+		mailBody.text="";
+	}
+
 	public void CheckAddress()
 	{
 		//warningMail.enabled = false;
 		Text text = mailAdress.transform.FindChild("Text").GetComponent<Text>();
-
+		text.color = Color.black;
 		if (IsMailAddress(mailAdress.text) == false)
 		{
 			Debug.Log("This is not mailaddress!");

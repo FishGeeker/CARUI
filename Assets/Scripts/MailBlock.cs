@@ -24,5 +24,14 @@ public class MailBlock : MonoBehaviour
 		MailTime.text = dt.ToString("dd.MM.yyyy");
 		MailFullTime.text = dt.ToString("dd.MM.yyyy HH:mm:ss");
 	}
+
+//	public void ContactsDisplay(Mail mail)
+//	{
+//		MailAddress.text = mail.adress;
+//	}
+	public void ContactsDisplay(string mailAddress)
+	{
+		MailAddress.text = mailAddress;
+	}
 }
 
