@@ -49,6 +49,8 @@
      <Compile Include="Assets\Scripts\CallUserDataManager.cs" />
      <Compile Include="Assets\Scripts\ContactBlock.cs" />
      <Compile Include="Assets\Scripts\ContactDisplay.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\GridSpace.cs" />
      <Compile Include="Assets\Scripts\MailBlock.cs" />
      <Compile Include="Assets\Scripts\MailDisplay.cs" />
      <Compile Include="Assets\Scripts\OnCallNumber.cs" />
