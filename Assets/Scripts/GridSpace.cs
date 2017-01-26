@@ -14,6 +14,8 @@ public class GridSpace : MonoBehaviour {
 		buttonText.text = gameController.GetPlayerSide();
 		button.interactable = false;
 		gameController.EndTurn();
+
+		RandomSetButton();
 	}
 
 	public void SetGameControllerReference(GameController controller)
@@ -21,4 +23,10 @@ public class GridSpace : MonoBehaviour {
 		gameController = controller;
 	}
 
+	void RandomSetButton()
+	{
+		gameController.buttonList[0].GetComponentInParent<Text>().text = gameController.GetPlayerSide();
+		gameController.buttonList[0].GetComponentInParent<Button>().interactable = false;
+		gameController.EndTurn();
+	}
 }

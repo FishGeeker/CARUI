@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour {
 
 	private string playerSide;
 	private int moveCount;
+	private int interactiveCount;
 
 	public void GameStart()
 	{
@@ -99,6 +100,7 @@ public class GameController : MonoBehaviour {
 	public void EndTurn()
 	{
 		moveCount ++;
+
 
 		if (buttonList[1].text == playerSide && buttonList[2].text == playerSide && buttonList[3].text == playerSide)
 		{
