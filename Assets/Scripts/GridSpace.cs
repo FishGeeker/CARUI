@@ -28,7 +28,7 @@ public class GridSpace : MonoBehaviour {
 	//After 1 second, random set a button from interactable buttons using Coroutine
 	IEnumerator RandomSetButton()
 	{
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(6/7);
 		indexList=new ArrayList();
 
 		//get all interactable buttons into a list

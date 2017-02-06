@@ -49,5 +49,9 @@
       <name>pi</name>
       <number>1432</number>
     </Contact>
+    <Contact>
+      <name>asd</name>
+      <number>123</number>
+    </Contact>
   </list>
 </ContactDatabase>
