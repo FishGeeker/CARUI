@@ -7,35 +7,46 @@ public class UIDataManager : MonoBehaviour
 
 	public Text fuelLevel;
 	public Text speed;
-	public Text frontDistance;
+	public Text frontDistance, backDistance, leftDistance, rightDistance;
 
 	public Button pedestrian, roadwork, slickRoad;
-	//public AudioSource clip;
+	public AudioSource warningSound;
+	public AudioClip roadEnvironmentWarningSound, carEnvironmentWarningSound;
 
 	private int fuelLevelValue;
 	private int speedValue;
-	private int frontDistanceValue;
+	private int frontDistanceValue, leftDistanceValue, rightDistanceValue, backDistanceValue;
 
 	private bool hasPedestrian, hasRoadWork, hasSlickRoad;
+	//private bool playRoadWarningSound, playCarWarningSound;
 
 	// Use this for initialization
 	void Start()
 	{
-		fuelLevelValue = 0;
+		fuelLevelValue = 100;
 		speedValue = 0;
-		frontDistanceValue=0;
-
+		frontDistanceValue = 100;
+		backDistanceValue = 500;
+		leftDistanceValue = 3;
+		rightDistanceValue = 5;
+		
 		hasPedestrian = false;
 		hasRoadWork = false;
 		hasSlickRoad = false;
+
+		//playCarWarningSound = false;
+		//playRoadWarningSound = false;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		fuelLevelValue++;
-		speedValue++;
-		frontDistanceValue++;
+		fuelLevelValue = fuelLevelValue - 1;
+		speedValue = speedValue + 1;
+		frontDistanceValue = frontDistanceValue - 1;
+		backDistanceValue = backDistanceValue - 1;
+		leftDistanceValue = leftDistanceValue - 1;
+		rightDistanceValue = rightDistanceValue - 1;
 
 		hasPedestrian = true;
 		hasRoadWork = true;
@@ -43,56 +54,118 @@ public class UIDataManager : MonoBehaviour
 
 		SetFuelLevel();
 		SetSpeed();
-		SetfrontDistance();
+		SetFrontDistance();
+		SetBackDistance();
+		SetLeftDistance();
+		SetRightDistance();
 
-		if (hasPedestrian)
+		CheckRoadStatus();
+		CheckCarStatus();
+	}
+
+	// Check FuelLevel, speed, front-back-left-right Distance of car
+	void CheckCarStatus()
+	{
+		if (fuelLevelValue<0)
 		{
-			startWarning(pedestrian);
+			StartCarStatusWarning(fuelLevel);
 		}
-		if (hasRoadWork)
+		if (speedValue>120)
 		{
-			//startWarning(roadwork);
-        }
-		if (hasSlickRoad)
+			StartCarStatusWarning(speed);
+		}
+		if (frontDistanceValue<10)
 		{
-			//startWarning(slickRoad);
-        }
+			StartCarStatusWarning(frontDistance);
+		}
+		if (leftDistanceValue<1)
+		{
+			StartCarStatusWarning(leftDistance);
+		}
+		if (backDistanceValue<10)
+		{
+			StartCarStatusWarning(backDistance);
+		}
+		if (rightDistanceValue<1)
+		{
+			StartCarStatusWarning(rightDistance);
+		}
 	}
 
-	void startWarning(Button zeichen)
+	void StartCarStatusWarning(Text InfoText)
 	{
-		StartCoroutine(SetWarning(zeichen));
+		//playCarWarningSound = true;
+		InfoText.color = Color.red;
+		//PlaySingle(carEnvironmentWarningSound, playCarWarningSound);
 	}
 
-	IEnumerator SetWarning(Button zeichen)
-	{
-        yield return new WaitForSeconds(1);
-
-        SetZeichen(true, zeichen);
-		yield return new WaitForSeconds(1);
-		SetZeichen(false, zeichen);
-	}
-
-	//set values
+	//set values for car status 
 	void SetFuelLevel()
 	{
 		fuelLevel.text = fuelLevelValue.ToString();
 	}
-
+	
 	void SetSpeed()
 	{
 		speed.text = speedValue.ToString();
 	}
-
-	void SetfrontDistance()
+	
+	void SetFrontDistance()
 	{
 		frontDistance.text=frontDistanceValue.ToString();
 	}
 
-	void SetZeichen(bool isPedestrian, Button zeichen)
+	void SetBackDistance()
+	{
+		backDistance.text=backDistanceValue.ToString();
+	}
+
+	void SetLeftDistance()
+	{
+		leftDistance.text=leftDistanceValue.ToString();
+	}
+
+	void SetRightDistance()
+	{
+		rightDistance.text=rightDistanceValue.ToString();
+	}
+
+	void CheckRoadStatus()
+	{
+		if (hasPedestrian==true)
+		{
+			StartRoadStatusWarning(pedestrian);
+		}
+		if (hasRoadWork==true)
+		{
+			//StartRoadStatusWarning(roadwork);
+		}
+		if (hasSlickRoad==true)
+		{
+			//StartRoadStatusWarning(slickRoad);
+		}
+	}
+
+	void StartRoadStatusWarning(Button zeichen)
+	{
+		//playRoadWarningSound = true;
+		StartCoroutine(SetRoadStatusWarning(zeichen));
+	}
+
+	IEnumerator SetRoadStatusWarning(Button zeichen)
+	{
+        yield return new WaitForSeconds(1);
+
+        SetZeichen(true, zeichen);
+
+		//PlaySingle(roadEnvironmentWarningSound, playRoadWarningSound);
+	}
+
+	//Used to set warning symbol clear
+	void SetZeichen(bool isWarning, Button zeichen)
 	{
 		var col=zeichen.image.color;
-		if (isPedestrian)
+		if (isWarning)
 		{
 			col.a=1;
 			zeichen.enabled=true;
@@ -103,5 +176,22 @@ public class UIDataManager : MonoBehaviour
 			zeichen.enabled=false;
 		}
 		zeichen.image.color=col;
+	}
+
+	//Used to play single sound clips.
+	public void PlaySingle(AudioClip clip, bool onPlay)
+	{
+		//Set the clip of our efxSource audio source to the clip passed in as a parameter.
+		warningSound.clip = clip;
+		
+		//Play the clip.
+		//warningSound.Play ();
+
+		if(onPlay)
+		{
+			
+			warningSound.PlayOneShot(clip);//use the same check for runSound
+			onPlay = false;
+		}
 	}
 }
