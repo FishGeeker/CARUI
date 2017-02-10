@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<MailsDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <list>
+    <Mail>
+      <adress>florianzhang@126.com</adress>
+      <subject>TestMail</subject>
+      <body>Hello World!
+Das ist wunderschön!</body>
+      <time>01/19/2017 10:06:20</time>
+    </Mail>
+    <Mail>
+      <adress>nihao@123.com</adress>
+      <subject>newTest</subject>
+      <body>Hi with testing!</body>
+      <time>01/17/2017 12:06:20</time>
+    </Mail>
+    <Mail>
+      <adress>florianzhang@126.com</adress>
+      <subject>test</subject>
+      <body>Guten Morgen!</body>
+      <time>01/19/2017 12:05:20</time>
+    </Mail>
+    <Mail>
+      <adress>hui.h.zhang@tum.de</adress>
+      <subject>Test_17.01.2017</subject>
+      <body>hihihihiihihihihih</body>
+      <time>01/18/2017 12:06:20</time>
+    </Mail>
+    <Mail>
+      <adress>daffda@122.d</adress>
+      <subject>hhhhhhhh</subject>
+      <body>fadf3errtttzuioo  gfggj h</body>
+      <time>01/19/2017 12:07:20</time>
+    </Mail>
+    <Mail>
+      <adress>xiaomi@126.com</adress>
+      <subject>teststtst</subject>
+      <body>lalalalsssssssllalalalal</body>
+      <time>01/19/2017 12:50:07</time>
+    </Mail>
+    <Mail>
+      <adress>davied@tum.de</adress>
+      <subject>Test SentMailConentPanel</subject>
+      <body>programm</body>
+      <time>01/19/2017 17:52:57</time>
+    </Mail>
+    <Mail>
+      <adress>speed@tum.de</adress>
+      <subject>Mailtest 23.01.2017</subject>
+      <body>Es ist ein testMail von 23.01.2017.</body>
+      <time>01/23/2017 14:07:31</time>
+    </Mail>
+    <Mail>
+      <adress>panda@tum.de</adress>
+      <subject>Initialize MailPanel</subject>
+      <body>During each Start we initialize the Input field for address, subject and body</body>
+      <time>01/23/2017 14:19:01</time>
+    </Mail>
+    <Mail>
+      <adress>newStudents@tum.de</adress>
+      <subject>test</subject>
+      <body>this is test mail</body>
+      <time>01/23/2017 14:22:17</time>
+    </Mail>
+    <Mail>
+      <adress>Address@tum.de</adress>
+      <subject>laaaaaaaalallalalal</subject>
+      <body>ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</body>
+      <time>01/23/2017 15:28:02</time>
+    </Mail>
+    <Mail>
+      <adress>davied@tum.de</adress>
+      <subject>dddddddddddddddddddd</subject>
+      <body>fffffffffffffff</body>
+      <time>01/23/2017 16:36:13</time>
+    </Mail>
+    <Mail>
+      <adress>littleMouse@tum.de</adress>
+      <subject>test</subject>
+      <body>tttttttttttttttttttttttttttttttttttttttttsssssssssssssssssssssssssssssssssssssssssssssssssssssssssttttttttttttttttttttttttttttttttttttlllllllllllllllllllllllllllllllllllllllll</body>
+      <time>01/23/2017 17:53:17</time>
+    </Mail>
+    <Mail>
+      <adress>jgugh@kjghkju.zf</adress>
+      <subject>fuzjf</subject>
+      <body>zutiztzutt
+lpüp
+
+</body>
+      <time>02/01/2017 19:11:09</time>
+    </Mail>
+  </list>
+</MailsDatabase>

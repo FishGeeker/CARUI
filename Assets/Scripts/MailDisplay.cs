@@ -91,6 +91,8 @@ public class MailDisplay : MonoBehaviour
 	{
 		newMailPanel.SetActive(true);
 		contactsPanel.SetActive(false);
+		VirtualKeyboard vk = new VirtualKeyboard();
+		vk.ShowTouchKeyboard();
 		addressInMailPanel.text = mail.MailAddress.text;
 		Text text = addressInMailPanel.transform.FindChild("Text").GetComponent<Text>();
 		text.color = Color.black;

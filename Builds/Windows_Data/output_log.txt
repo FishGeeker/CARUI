@@ -1,0 +1,120 @@
+Initialize engine version: 5.0.0b18 (d3c9386e9fa0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 570 (ID=0x1086)
+    Vendor:   NVIDIA
+    VRAM:     1233 MB
+Cluster Renderer Log : ARG list
+C:\Workspace\Unity\carUI\Builds\Windows.exe
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.dll (this message is harmless)
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.West.dll (this message is harmless)
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.Rare.dll (this message is harmless)
+Loading C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.Rare.dll into Unity Child Domain
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.MidEast.dll (this message is harmless)
+Loading C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.MidEast.dll into Unity Child Domain
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.dll (this message is harmless)
+Loading C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.dll into Unity Child Domain
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.Other.dll (this message is harmless)
+Loading C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.Other.dll into Unity Child Domain
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.West.dll (this message is harmless)
+Loading C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.West.dll into Unity Child Domain
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.CJK.dll (this message is harmless)
+Loading C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\I18N.CJK.dll into Unity Child Domain
+- Completed reload, in  0.244 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\System.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1940 -> priority: 1 
+Platform assembly: C:\Workspace\Unity\carUI\Builds\Windows_Data\Managed\System.Xml.dll (this message is harmless)
+ContactBlock(Clone)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ContactDisplay:ContactButtonOnClick(ContactBlock) (at C:\Workspace\Unity\carUI\Assets\Scripts\ContactDisplay.cs:40)
+<Display>c__AnonStorey3:<>m__1() (at C:\Workspace\Unity\carUI\Assets\Scripts\ContactDisplay.cs:32)
+UnityEngine.Events.InvokableCall:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:110)
+UnityEngine.Events.InvokableCallList:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:575)
+UnityEngine.Events.UnityEventBase:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:717)
+UnityEngine.Events.UnityEvent:Invoke() (at C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:53)
+UnityEngine.UI.Button:Press() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\UI\Core\Button.cs:36)
+UnityEngine.UI.Button:OnPointerClick(PointerEventData) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\UI\Core\Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents:Execute(IPointerClickHandler, BaseEventData) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\ExecuteEvents.cs:52)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\ExecuteEvents.cs:269)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:359)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:250)
+UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:161)
+UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\EventSystem.cs:264)
+ 
+(Filename: C:/Workspace/Unity/carUI/Assets/Scripts/ContactDisplay.cs Line: 40)
+
+ContactBlock(Clone)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ContactDisplay:ContactButtonOnClick(ContactBlock) (at C:\Workspace\Unity\carUI\Assets\Scripts\ContactDisplay.cs:40)
+<Display>c__AnonStorey3:<>m__1() (at C:\Workspace\Unity\carUI\Assets\Scripts\ContactDisplay.cs:32)
+UnityEngine.Events.InvokableCall:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:110)
+UnityEngine.Events.InvokableCallList:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:575)
+UnityEngine.Events.UnityEventBase:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:717)
+UnityEngine.Events.UnityEvent:Invoke() (at C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:53)
+UnityEngine.UI.Button:Press() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\UI\Core\Button.cs:36)
+UnityEngine.UI.Button:OnPointerClick(PointerEventData) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\UI\Core\Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents:Execute(IPointerClickHandler, BaseEventData) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\ExecuteEvents.cs:52)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\ExecuteEvents.cs:269)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:359)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:250)
+UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:161)
+UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\EventSystem.cs:264)
+ 
+(Filename: C:/Workspace/Unity/carUI/Assets/Scripts/ContactDisplay.cs Line: 40)
+
+ContactBlock(Clone)
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+ContactDisplay:ContactButtonOnClick(ContactBlock) (at C:\Workspace\Unity\carUI\Assets\Scripts\ContactDisplay.cs:40)
+<Display>c__AnonStorey3:<>m__1() (at C:\Workspace\Unity\carUI\Assets\Scripts\ContactDisplay.cs:32)
+UnityEngine.Events.InvokableCall:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:110)
+UnityEngine.Events.InvokableCallList:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:575)
+UnityEngine.Events.UnityEventBase:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:717)
+UnityEngine.Events.UnityEvent:Invoke() (at C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:53)
+UnityEngine.UI.Button:Press() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\UI\Core\Button.cs:36)
+UnityEngine.UI.Button:OnPointerClick(PointerEventData) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\UI\Core\Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents:Execute(IPointerClickHandler, BaseEventData) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\ExecuteEvents.cs:52)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\ExecuteEvents.cs:269)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:359)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:250)
+UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:161)
+UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\EventSystem.cs:264)
+ 
+(Filename: C:/Workspace/Unity/carUI/Assets/Scripts/ContactDisplay.cs Line: 40)
+
+davied@tum.de
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MailDisplay:AddressButtonOnClick(MailBlock) (at C:\Workspace\Unity\carUI\Assets\Scripts\MailDisplay.cs:98)
+<MailContactsDisplay>c__AnonStorey5:<>m__4() (at C:\Workspace\Unity\carUI\Assets\Scripts\MailDisplay.cs:84)
+UnityEngine.Events.InvokableCall:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:110)
+UnityEngine.Events.InvokableCallList:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:575)
+UnityEngine.Events.UnityEventBase:Invoke(Object[]) (at C:\buildslave\unity\build\Runtime\Export\UnityEvent.cs:717)
+UnityEngine.Events.UnityEvent:Invoke() (at C:\buildslave\unity\build\Runtime\Export\UnityEvent_0.cs:53)
+UnityEngine.UI.Button:Press() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\UI\Core\Button.cs:36)
+UnityEngine.UI.Button:OnPointerClick(PointerEventData) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\UI\Core\Button.cs:45)
+UnityEngine.EventSystems.ExecuteEvents:Execute(IPointerClickHandler, BaseEventData) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\ExecuteEvents.cs:52)
+UnityEngine.EventSystems.ExecuteEvents:Execute(GameObject, BaseEventData, EventFunction`1) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\ExecuteEvents.cs:269)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMousePress(MouseButtonEventData) (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:359)
+UnityEngine.EventSystems.StandaloneInputModule:ProcessMouseEvent() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:250)
+UnityEngine.EventSystems.StandaloneInputModule:Process() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\InputModules\StandaloneInputModule.cs:161)
+UnityEngine.EventSystems.EventSystem:Update() (at C:\buildslave\unity\build\Extensions\guisystem\guisystem\EventSystem\EventSystem.cs:264)
+ 
+(Filename: C:/Workspace/Unity/carUI/Assets/Scripts/MailDisplay.cs Line: 98)
+
