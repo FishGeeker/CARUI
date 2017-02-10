@@ -9,15 +9,13 @@ using UnityEngine.UI;
 public class CallUserDataManager : MonoBehaviour
 {
 	public static CallUserDataManager ins;
+	public ContactDatabase contactDB;
+	public InputField nameInput, numberInput;
 
 	void Awake()
 	{
 		ins = this;
 	}
-
-	public ContactDatabase contactDB;
-
-	public InputField nameInput, numberInput;
 
 //	public void SaveContacts()
 //	{
@@ -44,7 +42,7 @@ public class CallUserDataManager : MonoBehaviour
 				{
 					XmlNode nameParent = xNode.FirstChild;
 					XmlNode numberParent = xNode.LastChild;
-					if (nameParent.InnerText == nameInput.text&&numberParent.InnerText==numberInput.text)
+					if (nameParent.InnerText == nameInput.text && numberParent.InnerText == numberInput.text)
 					{
 						Debug.Log("User exists");
 						contactExist = true;

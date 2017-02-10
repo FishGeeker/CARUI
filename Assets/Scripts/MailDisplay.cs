@@ -7,16 +7,10 @@ using UnityEngine.UI;
 public class MailDisplay : MonoBehaviour
 {
 	
-	public MailBlock mailBlockPrefab,mailContactBlockPrefab;
-	//public GameObject callPanel, keyBoardPanel;
+	public MailBlock mailBlockPrefab, mailContactBlockPrefab;
 	public Text mailAdress, mailSubject, mailBody, mailTime;
-	public GameObject mailContentPanel,newMailPanel,contactsPanel;
+	public GameObject mailContentPanel, newMailPanel, contactsPanel;
 	public InputField addressInMailPanel;
-	
-	void Start()
-	{
-		//Display();
-	}
 	
 	public void Display()
 	{
@@ -59,7 +53,7 @@ public class MailDisplay : MonoBehaviour
 		}
 
 		//collect all Mailaddresses
-		ArrayList addressList=new ArrayList();
+		ArrayList addressList = new ArrayList();
 		foreach (Mail mail in SendingEmail.insMail.mailsDB.list)
 		{
 			addressList.Add(mail.adress);
@@ -69,7 +63,7 @@ public class MailDisplay : MonoBehaviour
 		int n = addressList.Count - 1;
 		for (int i = addressList.Count - 1; i >= 0; i--)
 		{
-			n = addressList.IndexOf(addressList[i], 0);
+			n = addressList.IndexOf(addressList [i], 0);
 			if (n >= 0 && n != i)
 			{
 				addressList.RemoveAt(i);
@@ -78,12 +72,6 @@ public class MailDisplay : MonoBehaviour
 
 		//sort list alphabetically
 		addressList.Sort();
-
-		//Debug log
-//		foreach (string item in addressList)
-//		{
-//			Debug.Log(item);
-//		}
 
 		//output those addresses on the GUI
 		foreach (string item in addressList)
@@ -97,19 +85,6 @@ public class MailDisplay : MonoBehaviour
 			});
 			//or use--> newBlock.GetComponent<Button>().onClick.AddListener(() => ContactButtonOnClick(newBlock));
 		}
-
-		//previous codes without removing same addresses
-//		foreach (Mail mail in SendingEmail.insMail.mailsDB.list.OrderBy(e => e.adress).ToList())
-//		{
-//
-//			MailBlock newBlock = Instantiate(mailContactBlockPrefab) as MailBlock;
-//			newBlock.transform.SetParent(transform, false);
-//			newBlock.ContactsDisplay(mail);
-//			newBlock.GetComponent<Button>().onClick.AddListener(delegate {
-//				AddressButtonOnClick(newBlock);	//with newBlock other than mail, otherwise causes the same output
-//			});
-//			//or use--> newBlock.GetComponent<Button>().onClick.AddListener(() => ContactButtonOnClick(newBlock));
-//		}
 	}
 
 	public void AddressButtonOnClick(MailBlock mail)
@@ -120,7 +95,6 @@ public class MailDisplay : MonoBehaviour
 		Text text = addressInMailPanel.transform.FindChild("Text").GetComponent<Text>();
 		text.color = Color.black;
 
-		//Debug.Log(mail.MailAddress.text);
 		Debug.Log(addressInMailPanel.text);
 	}
 }

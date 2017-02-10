@@ -11,42 +11,37 @@ using System;
 public class SendingEmail : MonoBehaviour
 {
 	public static SendingEmail insMail;
-	//public Text warningMail;
-	
+	public MailsDatabase mailsDB;
+	public InputField mailAdress, mailSubject, mailBody;
+	public Button sendButton;
+    
 	void Awake()
 	{
 		insMail = this;
-		//warningMail.enabled = false;
 	}
-	
-	public MailsDatabase mailsDB;
-	public InputField mailAdress, mailSubject, mailBody;
 
 	public void AfterSendingInitialize()
 	{
-		mailAdress.text="";
-		mailSubject.text="";
-		mailBody.text="";
+		mailAdress.text = "";
+		mailSubject.text = "";
+		mailBody.text = "";
 	}
 
 	public void CheckAddress()
 	{
-		//warningMail.enabled = false;
 		Text text = mailAdress.transform.FindChild("Text").GetComponent<Text>();
 		text.color = Color.black;
 		if (IsMailAddress(mailAdress.text) == false)
 		{
 			Debug.Log("This is not mailaddress!");
-			//warningMail.enabled = true;
-			Debug.Log(System.DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss"));
-			Debug.Log(System.DateTime.Now.ToString("dd.MM.yyyy"));
-
 			text.color = Color.red;
+			sendButton.interactable = false;
+
 		} else
 		{
 			Debug.Log("This is mailaddress!");
-			//warningMail.enabled = false;
 			text.color = Color.black;
+			sendButton.interactable = true;
 		}
 	}
 
@@ -66,9 +61,7 @@ public class SendingEmail : MonoBehaviour
 		email.subject = mailSubject.text;
 		email.body = mailBody.text;
 		email.time = System.DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
-//		email.adress = "florianzhang@";
-//		email.subject = "My Subject:test";
-//		email.body = "My Body Full of non-escaped chars";
+
 		return email;
 	}
 
@@ -80,43 +73,46 @@ public class SendingEmail : MonoBehaviour
 
 	public void SaveMail()
 	{
-		string xmlPath = Application.dataPath + "/StreamingFiles/Mails_data.xml";
-		
-		if (File.Exists(Application.dataPath + "/StreamingFiles/Mails_data.xml"))
+		if (mailAdress.text != "")
 		{
-			XmlDocument XDoc = new XmlDocument();
-			XDoc.Load(xmlPath);
-			XmlElement Node = (XmlElement)XDoc.GetElementsByTagName("list") [0];
+			string xmlPath = Application.dataPath + "/StreamingFiles/Mails_data.xml";
 			
-			if (Node != null)
+			if (File.Exists(Application.dataPath + "/StreamingFiles/Mails_data.xml"))
 			{
-				XmlElement mailNode = XDoc.CreateElement("Mail");
-				Node.AppendChild(mailNode);
+				XmlDocument XDoc = new XmlDocument();
+				XDoc.Load(xmlPath);
+				XmlElement Node = (XmlElement)XDoc.GetElementsByTagName("list") [0];
+				
+				if (Node != null)
+				{
+					XmlElement mailNode = XDoc.CreateElement("Mail");
+					Node.AppendChild(mailNode);
 					
-				XmlElement adressNode = XDoc.CreateElement("adress");
-				XmlElement subjectNode = XDoc.CreateElement("subject");
-				XmlElement bodyNode = XDoc.CreateElement("body");
-				XmlElement timeNode = XDoc.CreateElement("time");
-                    
-				adressNode.InnerText = mailAdress.text;
-				subjectNode.InnerText = mailSubject.text;
-				bodyNode.InnerText = mailBody.text;
-				timeNode.InnerText = System.DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
-				mailNode.AppendChild(adressNode);
-				mailNode.AppendChild(subjectNode);
-				mailNode.AppendChild(bodyNode);
-				mailNode.AppendChild(timeNode);
+					XmlElement adressNode = XDoc.CreateElement("adress");
+					XmlElement subjectNode = XDoc.CreateElement("subject");
+					XmlElement bodyNode = XDoc.CreateElement("body");
+					XmlElement timeNode = XDoc.CreateElement("time");
+					
+					adressNode.InnerText = mailAdress.text;
+					subjectNode.InnerText = mailSubject.text;
+					bodyNode.InnerText = mailBody.text;
+					timeNode.InnerText = System.DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+					mailNode.AppendChild(adressNode);
+					mailNode.AppendChild(subjectNode);
+					mailNode.AppendChild(bodyNode);
+					mailNode.AppendChild(timeNode);
+				}
+                
+				XDoc.Save(xmlPath);
+				Debug.Log("send succeed!");
+			} else
+			{
+				XmlSerializer ser = new XmlSerializer(typeof(MailsDatabase));
+				FileStream stream = new FileStream(Application.dataPath + "/StreamingFiles/Mails_data.xml", FileMode.Create);
+				ser.Serialize(stream, SendMail());
+				stream.Close();
+				Debug.Log("send succeed!");
 			}
-            
-			XDoc.Save(xmlPath);
-			Debug.Log("send succeed!");
-		} else
-		{
-			XmlSerializer ser = new XmlSerializer(typeof(MailsDatabase));
-			FileStream stream = new FileStream(Application.dataPath + "/StreamingFiles/Mails_data.xml", FileMode.Create);
-			ser.Serialize(stream, SendMail());
-			stream.Close();
-			Debug.Log("send succeed!");
 		}
 	}
 

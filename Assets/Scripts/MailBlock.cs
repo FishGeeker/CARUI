@@ -11,7 +11,7 @@ public class MailBlock : MonoBehaviour
 
 	void start()
 	{
-		MailFullTime.text="dd.MM.yyyy HH:mm:ss";
+		MailFullTime.text = "dd.MM.yyyy HH:mm:ss";
 	}
 
 	public void Display(Mail mail)
@@ -20,15 +20,11 @@ public class MailBlock : MonoBehaviour
 		MailSubject.text = mail.subject;
 		MailBody.text = mail.body;
 
-		DateTime dt=DateTime.Parse(mail.time.ToString());
+		DateTime dt = DateTime.Parse(mail.time.ToString());
 		MailTime.text = dt.ToString("dd.MM.yyyy");
 		MailFullTime.text = dt.ToString("dd.MM.yyyy HH:mm:ss");
 	}
-
-//	public void ContactsDisplay(Mail mail)
-//	{
-//		MailAddress.text = mail.adress;
-//	}
+	
 	public void ContactsDisplay(string mailAddress)
 	{
 		MailAddress.text = mailAddress;

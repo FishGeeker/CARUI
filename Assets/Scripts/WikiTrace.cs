@@ -3,7 +3,8 @@ using System.Collections;
 using System;
 using System.Runtime.InteropServices;
 
-public class WikiTrace : MonoBehaviour {
+public class WikiTrace : MonoBehaviour
+{
 
 	#if UNITY_STANDALONE_WIN || UNITY_EDITOR
 	[DllImport("user32.dll", EntryPoint = "SetWindowPos")]
@@ -17,12 +18,13 @@ public class WikiTrace : MonoBehaviour {
 	#endif
 	
 	// Use this for initialization
-	void Awake () {
-        SetPosition(100,500);
-    }
-    
+	void Awake()
+	{
+		SetPosition(100, 500);
+	}
 
-	public void WikiTraceStart () {
+	public void WikiTraceStart()
+	{
 		Application.OpenURL("http://thewikigame.com/");
 	}
 }

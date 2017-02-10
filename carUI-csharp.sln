@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{37AFD2F2-9D17-5B42-EB4E-2DA74B1B1843}") = "carUI", "Assembly-CSharp-vs.csproj", "{AD20107D-44E7-4120-535D-66573662AC11}"
 EndProject
-Project("{37AFD2F2-9D17-5B42-EB4E-2DA74B1B1843}") = "carUI", "Assembly-CSharp-Editor-vs.csproj", "{783689AD-00F2-FF0F-BCF5-5EB7AE324F33}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,15 +13,11 @@ Global
 		{AD20107D-44E7-4120-535D-66573662AC11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD20107D-44E7-4120-535D-66573662AC11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD20107D-44E7-4120-535D-66573662AC11}.Release|Any CPU.Build.0 = Release|Any CPU
-		{783689AD-00F2-FF0F-BCF5-5EB7AE324F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{783689AD-00F2-FF0F-BCF5-5EB7AE324F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{783689AD-00F2-FF0F-BCF5-5EB7AE324F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{783689AD-00F2-FF0F-BCF5-5EB7AE324F33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																												GlobalSection(MonoDevelopProperties) = preSolution
+																																																																					GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

@@ -20,20 +20,21 @@ public class PhoneNumber : MonoBehaviour
 	public Button buttonStern;
 	public Button buttonSharp;
 	public Button backButton;
-	public Button callButton;	//callButton in KeyboardPanel
-	public Button callButton1;	//callButton in InCallPanel
-	public Button cancelButton;
+	public Button callButton;
 	public Button refreshButton;
 	public Text warningText;
+	public AudioSource OnCallSound;
 	public AudioClip ringingSound;
 	public AudioClip messageSound;
-
 	private AudioSource audioSource;
 	private bool callButtonOn;
-	VirtualKeyboard vk = new VirtualKeyboard();
+	private VirtualKeyboard vk;
+
 	// Use this for initialization
 	void Start()
 	{
+		vk = new VirtualKeyboard();
+
 		callInputField.text = "";
 
 		Button btn1 = button1.GetComponent<Button>();
@@ -80,33 +81,30 @@ public class PhoneNumber : MonoBehaviour
 
 		Button btnCall = callButton.GetComponent<Button>();
 		btnCall.onClick.AddListener(CallButtonOnClick);
-
-
-		//btnCancel.onClick.AddListener(CallButtonOnClick);
-
-		//cancelButton=GameObject.Find("cancelButton").GetComponent;
-		//Button btnCall1 = callButton1.GetComponent<Button>();
-		//btnCall1.onClick.AddListener(newCallButtonOnClick);
 	}
 	
 	// Update is called once per frame
 	void Update()
 	{
 		warningText.enabled = false;
+		callButton.interactable = true;
+		// Check entered phone number if valid
 
 		if (IsPhoneNumber(callInputField.text) == false && callInputField.text.Length > 2)
 		{
-			//Debug.Log("This is phone number!");
+			callButton.interactable = true;
 			warningText.enabled = true;
 		} else if (WithSpecialNumber(callInputField.text))
 		{
+			callButton.interactable = false;
 			warningText.enabled = true;
+		} else if (callInputField.text.Length < 3)
+		{
+			callButton.interactable = false;
 		} else
 		{
-			//Debug.Log("This is not phone number!");
 			warningText.enabled = false;
 		}
-		//getPhoneNumber();
 	}
 
 	public void OpenKeyboard()
@@ -202,21 +200,12 @@ public class PhoneNumber : MonoBehaviour
 	{
 		if (!warningText.enabled && callInputField.text.Length > 2)
 		{
-			StartCoroutine(SoundOn());
-		} else
-		{
-			StartCoroutine(WaitMoment());
+			StartCoroutine(playSound());
 		}
 	}
 
-//	public void newCallButtonOnClick()
-//	{
-//		StartCoroutine(SoundOn());
-//	}
-
 	bool IsPhoneNumber(string input)
 	{
-		//string pattern = @"^\w+@\w+\.\w+$"; for email
 		string pattern = @"^(\d{3,4}\d{0,10})$";
 
 		bool isMatach = Regex.IsMatch(input, pattern);
@@ -233,30 +222,6 @@ public class PhoneNumber : MonoBehaviour
 		return isMatach;
 	}
 
-	IEnumerator SoundOn()
-	{
-		audioSource = cancelButton.GetComponent<AudioSource>();
-		audioSource.clip = ringingSound;
-
-		if (cancelButton.enabled)
-		{
-			audioSource.Play();
-		}
-		yield return new WaitForSeconds(4);
-
-		if (cancelButton.enabled)
-		{
-			audioSource.Play();
-		}
-		yield return new WaitForSeconds(4);
-		audioSource.clip = messageSound;
-
-		if (cancelButton.enabled)
-		{
-			audioSource.Play();
-		}
-	}
-
 	IEnumerator WaitMoment()
 	{
 		warningText.enabled = true;
@@ -267,5 +232,39 @@ public class PhoneNumber : MonoBehaviour
 	{
 		Debug.Log(callInputField.text);
 		//return callInputField.text;
+	}
+
+	public void PlayCallSound()
+	{
+		StartCoroutine(playSound());
+	}
+
+	public void StopCallSound()
+	{
+		StopSound();
+	}
+
+	void StopSound()
+	{
+		OnCallSound.enabled = false;
+	}
+
+	IEnumerator playSound()
+	{
+		if (OnCallSound.enabled == false)
+		{
+			OnCallSound.enabled = true;
+		}
+		OnCallSound.clip = ringingSound;
+		if (OnCallSound.enabled == true)
+		{
+			OnCallSound.Play();
+		}
+		yield return new WaitForSeconds(OnCallSound.clip.length);
+		OnCallSound.clip = messageSound;
+		if (OnCallSound.enabled == true)
+		{
+			OnCallSound.Play();
+		}
 	}
 }

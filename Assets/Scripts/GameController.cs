@@ -3,31 +3,32 @@ using System.Collections;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class PlayerColor{
+public class PlayerColor
+{
 	public Color panelColor;
 	public Color textColor;
 }
 
 [System.Serializable]
-public class Player{
+public class Player
+{
 	public Image panel;
 	public Text text;
 	public Button button;
 }
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
 	public Player playerX;
 	public Player playerO;
 	public PlayerColor activePlayerColor;
 	public PlayerColor inactivePlayerColor;
-
 	public Text[] buttonList;
 	public GameObject gameOverPanel;
 	public Text gameOverText;
 	public GameObject restartButton;
 	public GameObject startInfo;
-
 	private string playerSide;
 	private int moveCount;
 	private int interactiveCount;
@@ -53,8 +54,7 @@ public class GameController : MonoBehaviour {
 		if (playerSide == "X")
 		{
 			SetPlayerColors(playerX, playerO);
-		}
-		else
+		} else
 		{
 			SetPlayerColors(playerO, playerX);
 		}
@@ -71,7 +71,7 @@ public class GameController : MonoBehaviour {
 	{
 		for (int i = 0; i < buttonList.Length; i++)
 		{
-			buttonList[i].GetComponentInParent<GridSpace>().SetGameControllerReference(this);
+			buttonList [i].GetComponentInParent<GridSpace>().SetGameControllerReference(this);
 
 		}
 	}
@@ -102,43 +102,34 @@ public class GameController : MonoBehaviour {
 		moveCount ++;
 
 
-		if (buttonList[1].text == playerSide && buttonList[2].text == playerSide && buttonList[3].text == playerSide)
+		if (buttonList [1].text == playerSide && buttonList [2].text == playerSide && buttonList [3].text == playerSide)
 		{
 			GameOver(playerSide);
-		}
-		else if (buttonList[5].text == playerSide && buttonList[0].text == playerSide && buttonList[4].text == playerSide)
+		} else if (buttonList [5].text == playerSide && buttonList [0].text == playerSide && buttonList [4].text == playerSide)
 		{
 			GameOver(playerSide);
-		}
-		else if (buttonList[6].text == playerSide && buttonList[7].text == playerSide && buttonList[8].text == playerSide)
+		} else if (buttonList [6].text == playerSide && buttonList [7].text == playerSide && buttonList [8].text == playerSide)
 		{
 			GameOver(playerSide);
-		}
-		else if (buttonList[1].text == playerSide && buttonList[5].text == playerSide && buttonList[6].text == playerSide)
+		} else if (buttonList [1].text == playerSide && buttonList [5].text == playerSide && buttonList [6].text == playerSide)
 		{
 			GameOver(playerSide);
-		}
-		else if (buttonList[2].text == playerSide && buttonList[0].text == playerSide && buttonList[7].text == playerSide)
+		} else if (buttonList [2].text == playerSide && buttonList [0].text == playerSide && buttonList [7].text == playerSide)
 		{
 			GameOver(playerSide);
-		}
-		else if (buttonList[3].text == playerSide && buttonList[4].text == playerSide && buttonList[8].text == playerSide)
+		} else if (buttonList [3].text == playerSide && buttonList [4].text == playerSide && buttonList [8].text == playerSide)
 		{
 			GameOver(playerSide);
-		}
-		else if (buttonList[1].text == playerSide && buttonList[0].text == playerSide && buttonList[8].text == playerSide)
+		} else if (buttonList [1].text == playerSide && buttonList [0].text == playerSide && buttonList [8].text == playerSide)
 		{
 			GameOver(playerSide);
-		}
-		else if (buttonList[3].text == playerSide && buttonList[0].text == playerSide && buttonList[6].text == playerSide)
+		} else if (buttonList [3].text == playerSide && buttonList [0].text == playerSide && buttonList [6].text == playerSide)
 		{
 			GameOver(playerSide);
-		}
-		else if (moveCount >= 9)
+		} else if (moveCount >= 9)
 		{
 			GameOver("draw");
-		}
-		else
+		} else
 		{
 			ChangeSides();
 		}
@@ -151,7 +142,7 @@ public class GameController : MonoBehaviour {
 		{
 			SetGameOverText("It's draw!");
 			SetPlayerColorsInactive();
-		}else
+		} else
 		{
 			SetGameOverText(winningPlayer + " Wins!");
 		}
@@ -164,8 +155,7 @@ public class GameController : MonoBehaviour {
 		if (playerSide == "X")
 		{
 			SetPlayerColors(playerX, playerO);
-		}
-		else
+		} else
 		{
 			SetPlayerColors(playerO, playerX);
 		}
@@ -185,7 +175,7 @@ public class GameController : MonoBehaviour {
 		//SetBoardInteractable(true);
 		for (int i = 0; i < buttonList.Length; i++)
 		{
-			buttonList[i].text = "";
+			buttonList [i].text = "";
 		}
 		restartButton.SetActive(false);
 		SetPlayerButtons(true);
@@ -197,7 +187,7 @@ public class GameController : MonoBehaviour {
 	{
 		for (int i = 0; i < buttonList.Length; i++)
 		{
-			buttonList[i].GetComponentInParent<Button>().interactable = toggle;
+			buttonList [i].GetComponentInParent<Button>().interactable = toggle;
 		}
 	}
 }
