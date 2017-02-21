@@ -46,19 +46,19 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CallManager.cs" />
      <Compile Include="Assets\Scripts\CallUserDataManager.cs" />
      <Compile Include="Assets\Scripts\ContactBlock.cs" />
      <Compile Include="Assets\Scripts\ContactDisplay.cs" />
+     <Compile Include="Assets\Scripts\EmailManager.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GridSpace.cs" />
      <Compile Include="Assets\Scripts\MailBlock.cs" />
      <Compile Include="Assets\Scripts\MailDisplay.cs" />
-     <Compile Include="Assets\Scripts\PhoneNumber.cs" />
      <Compile Include="Assets\Scripts\QuitOnClick.cs" />
-     <Compile Include="Assets\Scripts\SendingEmail.cs" />
      <Compile Include="Assets\Scripts\StatusDataManager.cs" />
      <Compile Include="Assets\Scripts\VirtualKeyboard.cs" />
-     <Compile Include="Assets\Scripts\WikiTrace.cs" />
+     <Compile Include="Assets\Scripts\WikiRace.cs" />
      <None Include="Assets\StreamingFiles\Mails_data.xml" />
      <None Include="Assets\Materials\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\StreamingFiles\callContact_data.xml" />

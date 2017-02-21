@@ -20,7 +20,7 @@ public class MailDisplay : MonoBehaviour
 			Destroy(child.gameObject);
 		}
 
-		foreach (Mail mail in SendingEmail.insMail.mailsDB.list.OrderByDescending(e => e.time).ToList())
+		foreach (Mail mail in EmailManager.insMail.mailsDB.list.OrderByDescending(e => e.time).ToList())
 		{
 			MailBlock newBlock = Instantiate(mailBlockPrefab) as MailBlock;
 			newBlock.transform.SetParent(transform, false);
@@ -54,7 +54,7 @@ public class MailDisplay : MonoBehaviour
 
 		//collect all Mailaddresses
 		ArrayList addressList = new ArrayList();
-		foreach (Mail mail in SendingEmail.insMail.mailsDB.list)
+		foreach (Mail mail in EmailManager.insMail.mailsDB.list)
 		{
 			addressList.Add(mail.adress);
 		}

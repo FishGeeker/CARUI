@@ -62,7 +62,8 @@ public class StatusDataManager : MonoBehaviour
 		SetLeftDistance();
 		SetRightDistance();
 
-		CheckRoadStatus();
+		//CheckRoadStatus();
+		CheckRoad();
 		CheckCarStatus();
 		CheckLights();
 	}
@@ -215,6 +216,32 @@ public class StatusDataManager : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Checks the road.
+	/// </summary>
+	void CheckRoad()
+	{
+		if (hasPedestrian == true)
+		{
+			this.InvokeRepeating("RoadStatusWarning1", 1.0f, 2.0f);
+			this.InvokeRepeating("RoadStatusWarning2", 2.0f, 2.0f);
+		}
+		else
+		{
+			RoadStatusWarning2();
+		}
+	}
+
+	void RoadStatusWarning1()
+	{
+		StartRoadStatusWarning(pedestrian);
+	}
+	void RoadStatusWarning2()
+	{
+		CancelRoadStatusWarning(pedestrian);
+	}
+	////*/*/*/*/*/*/*/**/*/*/*/*/*/*/*/
+
 	void StartRoadStatusWarning(Button zeichen)
 	{
 		SetZeichen(true, zeichen);
@@ -232,11 +259,9 @@ public class StatusDataManager : MonoBehaviour
 		if (isWarning)
 		{
 			col.a = 1;
-			zeichen.enabled = true;
 		} else
 		{
 			col.a = (float)0.176;
-			zeichen.enabled = false;
 		}
 		zeichen.image.color = col;
 	}
